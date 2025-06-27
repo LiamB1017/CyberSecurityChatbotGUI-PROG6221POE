@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CyberSecurityChatbotGUI"
         mc:Ignorable="d"
-        Title="LogWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Activity Log" Height="300" Width="400" ResizeMode="NoResize">
+    <Grid Background="#f4f4f4" Margin="10"> 
+        <TextBlock Text="Activity Log" FontSize="20" FontWeight="Bold" Margin="0,0,0,10"/>
+        <ListBox x:Name="LogList" VerticalAlignment="Top" Margin="0,30,0,0"/>
     </Grid>
 </Window>
