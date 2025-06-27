@@ -46,6 +46,8 @@ Visual Studio
 
 6. You can also clone the repository into visual studio.
 
+7. Finally you can open the submitted ZIP File, then open ST10262451 Liam Brown PROG6221 POE, then open CyberSecurityChatbotGui file, then go into bin, then debug, which will then allow you to run the CyberSecurityChatbotGUI application, which is the full WPF app. You may need to extract all in order to run the app. 
+
 ## 🎯 Custom Features
 
 Cybersecurity Tips embedded in responses
