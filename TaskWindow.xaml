@@ -7,6 +7,17 @@
         mc:Ignorable="d"
         Title="TaskWindow" Height="450" Width="800">
     <Grid>
+        <StackPanel>
+            <TextBox x:Name="TaskTitleBox" Text="Task Title" Margin="5"/>
+            <TextBox x:Name="TaskDescBox" Text="Description" Margin="5"/>
+            <DatePicker x:Name="TaskReminderPicker" Margin="5"/>
+            <Button Content="Add Task" Click="AddTaskButton_Click" Margin="5"/>
+            <ListBox x:Name="TaskListBox" Height="150" Margin="5"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Complete" Click="CompleteTask_Click" Margin="5"/>
+                <Button Content="Delete" Click="DeleteTask_Click" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
         
     </Grid>
 </Window>

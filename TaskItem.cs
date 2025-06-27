@@ -8,6 +8,10 @@ namespace CyberSecurityChatbotGUI
 {
     class TaskItem
     {
+        public string Title { get; internal set; }
+        public string Description { get; internal set; }
+        public DateTime? ReminderDate { get; internal set; }
+        public bool IsCompleted { get; internal set; }
     }
 }
 public class TaskItem
