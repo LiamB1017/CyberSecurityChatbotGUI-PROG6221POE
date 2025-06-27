@@ -1,8 +1,8 @@
-✅ Cybersecurity Awareness Chatbot PROG6221 POE
+# ✅ Cybersecurity Awareness Chatbot PROG6221 POE
 Name: Liam Brown
 Student Number: ST10262451
 
-📘 Project Overview
+## 📘 Project Overview
 This project is a WPF GUI application built in C# designed to promote cybersecurity awareness. It allows users to:
 
 Chat with a simulated chatbot
@@ -13,7 +13,7 @@ Set reminders for secure habits
 
 Test knowledge with a quiz
 
-🧠 Main Features
+## 🧠 Main Features
 Chatbot Interaction with keyword detection and sentiment simulation
 
 Task Assistant to manage cybersecurity tasks (with reminders)
@@ -24,7 +24,7 @@ NLP Simulation to understand flexible user input
 
 Activity Log of recent user actions
 
-🛠️ Technologies Used
+## 🛠️ Technologies Used
 C#
 
 WPF (XAML)
@@ -33,20 +33,20 @@ WPF (XAML)
 
 Visual Studio
 
-⚙️ How to Run
+## ⚙️ How to Run
 1. Open CyberSecurityChatbotGUI.sln in Visual Studio.
 
 2. Build and run the solution.
 
 3. Use the chatbot interface to access features or navigate using the buttons.
 
-🎯 Custom Features
+## 🎯 Custom Features
 
 Cybersecurity Tips embedded in responses
 
 Activity Log tracking user behavior
 
-🎥 Video Demo
+## 🎥 Video Demo
 Recorded using Xbox Game Bar recording software.
 Shows all core features and interactions.
 
