@@ -16,6 +16,20 @@ namespace CyberSecurityChatbotGUI
         {
             InitializeComponent();
         }
+        private List<string> tips = new List<string>
+{
+    "🔐 Use strong, unique passwords for every account.",
+    "📱 Enable two-factor authentication (2FA) to boost security.",
+    "🚫 Don’t click on links from unknown sources or emails.",
+    "🌐 Always use HTTPS websites when sharing personal info.",
+    "📧 Be suspicious of emails asking for login details.",
+    "🧠 Think before you click—especially on pop-ups or ads.",
+    "🔄 Update your apps and operating systems regularly.",
+    "🔒 Use a password manager instead of writing passwords down.",
+    "👀 Cover your webcam when not in use.",
+    "🚨 Back up your data to avoid ransomware loss."
+};
+
         // Core chatbot logic
 
         private void SendButton_Click(object sender, RoutedEventArgs e)
@@ -176,6 +190,14 @@ namespace CyberSecurityChatbotGUI
                 var recent = activityLog.Skip(Math.Max(0, activityLog.Count - 5));
                 return "📋 Here's what I've done:\n" + string.Join("\n", recent.Select((a, i) => $"{i + 1}. {a}"));
             }
+            if (lowerInput.Contains("tip") || lowerInput.Contains("give me a tip") || lowerInput.Contains("advice") || lowerInput.Contains("security tip"))
+            {
+                Random rand = new Random();
+                string tip = tips[rand.Next(tips.Count)];
+                activityLog.Add("User requested a cybersecurity tip.");
+                return $"💡 Cyber Tip: {tip}";
+            }
+
 
             // Keyword-based chatbot from Parts 1 and 2
             if (lowerInput.Contains("phishing"))
