@@ -12,7 +12,21 @@
             <TextBox x:Name="TaskDescBox" Text="Description" Margin="5"/>
             <DatePicker x:Name="TaskReminderPicker" Margin="5"/>
             <Button Content="Add Task" Click="AddTaskButton_Click" Margin="5"/>
-            <ListBox x:Name="TaskListBox" Height="150" Margin="5"/>
+            <ListBox x:Name="TaskListBox" Height="150" Margin="5">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="1" BorderBrush="Gray" Padding="5" Margin="2">
+                            <StackPanel>
+                                <TextBlock Text="{Binding Title}" FontWeight="Bold" FontSize="14"/>
+                                <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Margin="0,2,0,0"/>
+                                <TextBlock Text="{Binding ReminderDate, StringFormat=Reminder: {0:dd MMM yyyy}}" 
+                               Foreground="Gray" FontStyle="Italic" Margin="0,2,0,0"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Content="Complete" Click="CompleteTask_Click" Margin="5"/>
                 <Button Content="Delete" Click="DeleteTask_Click" Margin="5"/>

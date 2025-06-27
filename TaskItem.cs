@@ -12,6 +12,11 @@ namespace CyberSecurityChatbotGUI
         public string Description { get; internal set; }
         public DateTime? ReminderDate { get; internal set; }
         public bool IsCompleted { get; internal set; }
+
+        internal void Add(TaskItem task)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 public class TaskItem

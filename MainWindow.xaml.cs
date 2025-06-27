@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace CyberSecurityChatbotGUI
@@ -19,14 +20,90 @@ namespace CyberSecurityChatbotGUI
 
         private void SendButton_Click(object sender, RoutedEventArgs e)
         {
-            string userMessage = UserInput.Text.ToLower();
-            ChatLog.Text += $"\nUser: {userMessage}";
+            string input = UserInput.Text.Trim();
+            ChatLog.Text += $"\n\nYou: {input}";
 
-            string botResponse = ProcessUserInput(userMessage);
-            ChatLog.Text += $"\nBot: {botResponse}";
+            string response = InterpretInput(input);
+            ChatLog.Text += $"\nBot: {response}";
 
-            UserInput.Text = "";
+            UserInput.Clear();
         }
+        private string InterpretInput(string input)
+        {
+            input = input.ToLower();
+
+            if (input.Contains("add task") || input.Contains("set task") || input.Contains("remind me"))
+            {
+                // NLP - simulate auto-adding a task based on input
+                string taskDescription = ExtractTaskFromInput(input);
+                TaskItem task = new TaskItem
+                {
+                    Title = taskDescription,
+                    Description = $"Auto-created from message: '{input}'",
+                    ReminderDate = null,
+                    IsCompleted = false
+                };
+                task.Add(task);
+                activityLog.Add($"Task added via NLP: '{task.Title}'");
+                return $"Task added: '{task.Title}'. Would you like to set a reminder?";
+            }
+            else if (input.Contains("start quiz") || input.Contains("quiz"))
+            {
+                OpenQuiz_Click(null, null);
+                activityLog.Add("User started the quiz.");
+                return "Launching the cybersecurity quiz now! 🎮";
+            }
+            else if (input.Contains("show log") || input.Contains("activity log") || input.Contains("what have you done"))
+            {
+                LogWindow logWindow = new LogWindow(activityLog);
+                logWindow.ShowDialog();
+                return "Here’s a summary of recent actions.";
+            }
+            else if (input.Contains("password") && input.Contains("remind"))
+            {
+                TaskItem task = new TaskItem
+                {
+                    Title = "Update your password",
+                    Description = "Don’t forget to update your password!",
+                    ReminderDate = DateTime.Now.AddDays(1),
+                    IsCompleted = false
+                };
+                task.Add(task);
+                activityLog.Add($"Reminder task auto-added: {task.Title}");
+                return "Got it! I'll remind you tomorrow to update your password.";
+            }
+
+            // Fallback response
+            return "I'm here to help with tasks, reminders, quizzes, and cybersecurity tips!";
+        }
+
+        private void OpenQuiz_Click(object value1, object value2)
+        {
+            throw new NotImplementedException();
+        }
+
+        private string ExtractTaskFromInput(string input)
+        {
+            // Simulate NLP parsing for task name
+            string lower = input.ToLower();
+
+            if (lower.Contains("enable two-factor"))
+                return "Enable 2FA";
+
+            if (lower.Contains("review") && lower.Contains("privacy"))
+                return "Review Privacy Settings";
+
+            if (lower.Contains("update password"))
+                return "Update your Password";
+
+            if (lower.Contains("backup"))
+                return "Backup your data";
+
+            // Default fallback
+            return "General Cybersecurity Task";
+        }
+
+
 
         private string ProcessUserInput(string input)
         {
@@ -73,6 +150,7 @@ namespace CyberSecurityChatbotGUI
             AddToChat($"Bot: {response}");
         }
 
+
         private string GenerateResponse(string input)
         {
             string lowerInput = input.ToLower();
@@ -113,6 +191,12 @@ namespace CyberSecurityChatbotGUI
 
             return "I'm still learning. Try asking about cybersecurity or use the buttons below to explore more features.";
         }
+        private void ActivityLogButton_Click(object sender, RoutedEventArgs e)
+        {
+            LogWindow logWindow = new LogWindow(activityLog);
+            logWindow.ShowDialog(); // Use ShowDialog() to prevent app shutdown
+        }
+
 
         private void AddToChat(string message)
         {
