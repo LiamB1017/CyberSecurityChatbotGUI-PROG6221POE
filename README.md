@@ -34,11 +34,17 @@ WPF (XAML)
 Visual Studio
 
 ## ⚙️ How to Run
-1. Open CyberSecurityChatbotGUI.sln in Visual Studio.
+1. Open up the CyberSecurityChatbotGUI folder 
 
-2. Build and run the solution.
+2. Next open the CyberSecurityChatbotGUI.sln in Visual Studio.
 
-3. Use the chatbot interface to access features or navigate using the buttons.
+3. Build and run the solution.
+
+4. Use the chatbot interface to access features or navigate using the buttons.
+
+5. Alternatively you can import the full project across from the submitted ZIP file. This is the CyberSecurityChatbotGUI folder.
+
+6. You can also clone the repository into visual studio.
 
 ## 🎯 Custom Features
 
@@ -47,6 +53,6 @@ Cybersecurity Tips embedded in responses
 Activity Log tracking user behavior
 
 ## 🎥 Video Demo
-Recorded using Xbox Game Bar recording software.
+Recorded using Microsoft Clipchamp recording software.
 Shows all core features and interactions.
 
