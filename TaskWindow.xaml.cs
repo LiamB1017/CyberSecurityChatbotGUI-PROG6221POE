@@ -21,6 +21,10 @@ namespace CyberSecurityChatbotGUI
     {
         public TaskWindow()
         {
+        }
+
+        public TaskWindow(List<String> ActivityLog)
+        {
             InitializeComponent();
         }
     }

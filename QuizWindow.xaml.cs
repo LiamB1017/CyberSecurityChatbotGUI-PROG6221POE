@@ -15,11 +15,15 @@ using System.Windows.Shapes;
 namespace CyberSecurityChatbotGUI
 {
     /// <summary>
-    /// Interaction logic for QuixWindow.xaml
+    /// Interaction logic for QuizWindow.xaml
     /// </summary>
-    public partial class QuixWindow : Window
+    public partial class QuizWindow : Window
     {
-        public QuixWindow()
+        public QuizWindow()
+        {
+        }
+
+        public QuizWindow(List<String> ActivityLog)
         {
             InitializeComponent();
         }

@@ -1,4 +1,4 @@
-﻿<Window x:Class="CyberChatbotPOE.MainWindow"
+﻿<Window x:Class="CyberSecurityChatbotGUI.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Cybersecurity Awareness Chatbot" Height="600" Width="800"

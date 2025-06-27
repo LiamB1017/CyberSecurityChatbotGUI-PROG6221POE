@@ -19,7 +19,7 @@ namespace CyberSecurityChatbotGUI
     /// </summary>
     public partial class LogWindow : Window
     {
-        public LogWindow()
+        public LogWindow(List<String> ActivityLog)
         {
             InitializeComponent();
         }
